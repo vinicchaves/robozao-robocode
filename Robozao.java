@@ -129,7 +129,7 @@ public class Robozao extends AdvancedRobot {
             setTurnRight(giroAleatorio);
         }
 		
-		mirarPreciso(distanciaInimigo, bearingInimigo, velocidadeInimigo);
+
     }
 
     @Override
@@ -171,12 +171,5 @@ public class Robozao extends AdvancedRobot {
         }
     }
 	
-   private void mirarPreciso(double distanciaInimigo, double bearingInimigo, double velocidadeInimigo) {
-        double tempoParaAlvo = distanciaInimigo / (20 - 3 * (distanciaInimigo / 800)); // Fórmula para calcular potência do tiro
-        double anguloInterceptacao = bearingInimigo + velocidadeInimigo * Math.sin(Math.toRadians(bearingInimigo)) / 20;
-        double anguloAjuste = Utils.normalRelativeAngleDegrees(anguloInterceptacao - getGunHeading());
-
-        setTurnGunRight(anguloAjuste);
-    }
 
 }
